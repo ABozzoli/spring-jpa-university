@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<div th:replace="resources :: head"></div>
+	<title>Department detail</title>
+</head>
+
+<body>
+	<div class="container">
+		<h1 th:text="|${department.name}|"></h1>
+		<hr/>
+
+		
+		<!-- button -->
+		<div>
+			<a class="btn btn-primary" th:href="@{/}">Back</a>
+		</div>
+	</div>
+	
+	<!-- scripsts -->
+	<div th:replace="resources :: scripts"></div>
+</body>
+</html>
