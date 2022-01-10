@@ -1,12 +1,9 @@
 package org.generation.italy.model;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,27 +15,18 @@ public class Degree {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@ManyToOne(fetch=FetchType.LAZY) // fetch è opzionale e definisce cosa prende (LAZY non fa join)
-	@JoinColumn(name="department_id")
-	private Department department;
-	
 	private String name;
 	private String level;
 	private String address;
 	private String email;
 	private String website;
 	
+	// getters/setters
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
-	}
-	public Department getDepartment() {
-		return department;
-	}
-	public void setDepartment(Department department) {
-		this.department = department;
 	}
 	public String getName() {
 		return name;

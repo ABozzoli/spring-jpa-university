@@ -23,11 +23,12 @@ public class DepartmentController {
 		return "departments";
 	}
 	
-	@GetMapping("/department/{id}")
-	public String departmentDetail(Model model, @PathVariable Integer id) {
-		Department d = repo.getById(id);
+	@GetMapping("/department/{department_id}")
+	public String departmentDegrees(Model model, @PathVariable Integer department_id) {
 		
+		Department d = repo.getById(department_id);
 		model.addAttribute("department", d);
+		model.addAttribute("degrees", d.getDegrees());
 		return "detail";
 	}
 	

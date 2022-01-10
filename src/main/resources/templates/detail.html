@@ -2,14 +2,35 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<div th:replace="resources :: head"></div>
-	<title>Department detail</title>
+	<title>Department degrees</title>
 </head>
 
 <body>
 	<div class="container">
 		<h1 th:text="|${department.name}|"></h1>
 		<hr/>
-
+		
+		<!-- table -->
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Level</th>
+					<th scope="col">Address</th>
+					<th scope="col">E-mail</th>
+					<th scope="col">Website</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="degree : ${degrees}">
+					<td th:text="${degree.name}"></td>
+					<td th:text="${degree.level}"></td>
+					<td th:text="${degree.address}"></td>
+					<td th:text="${degree.email}"></td>
+					<td th:text="${degree.website}"></td>
+				</tr>
+			</tbody>
+		</table >
 		
 		<!-- button -->
 		<div>
